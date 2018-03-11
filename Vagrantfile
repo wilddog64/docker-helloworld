@@ -13,10 +13,10 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "centos/7"
-  config.vm.network :forwarded_port, guest:8080, host: 8088
+  config.vm.network :forwarded_port, guest:80, host: 8089
   config.vm.provision :docker do |d|
       d.build_image '/vagrant', args: '-t chengkai/web-test'
-      d.run 'chengkai/web-test', args: '--name web-test -p 8080:8000'
+      d.run 'chengkai/web-test', args: '--name web-test -p 80:80'
   end
 
   # Disable automatic box update checking. If you disable this, then

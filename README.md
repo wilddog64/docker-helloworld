@@ -54,3 +54,13 @@ And you should see this output,
 
 Note:
 IP address may vary on different machines
+
+## Directory Structure
+    .
+    ├── Dockerfile
+    ├── README.md
+    ├── Vagrantfile
+    ├── files
+    │   ├── httpd.conf
+    │   └── index.html
+    └── index.html

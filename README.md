@@ -42,3 +42,15 @@ Open your favior brower, and enter ```http://localhost:8089```, after hitting th
 open terminal or command prompt and enter ```curl http://localhost:8089```, and you will see
 
     <html><body><h1>Hello World</h1></body></html>
+
+### Check Access Log
+After you access to the page, you can use this command (from outside the vagrant box) to examine the apache log file
+
+    vagrant ssh -c "docker exec -t web-test bash -i -c 'cat /usr/local/apache2/logs/access_log'"
+
+And you should see this output,
+
+    10.0.2.2 - - [11/Mar/2018:02:55:10 +0000] "GET / HTTP/1.1" 200 47 "-" "curl/7.54.0"
+
+Note:
+IP address may vary on different machines
